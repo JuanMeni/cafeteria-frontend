@@ -1,14 +1,16 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const ItemProducto = () => {
+const ItemProducto = ({producto}) => {
+    const{nombreProducto, id, categoria, imagen, precio} = {...producto}
     return (
         <tr>
-            <td>1</td>
-            <td>Cafe</td>
-            <td>$350</td>
-            <td>https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1</td>
-            <td>Bebida caliente</td>
+            <td>{id}</td>
+            {/* <td>{props.producto.nombreProducto}</td> */}
+            <td>{nombreProducto}</td>
+            <td>${precio}</td>
+            <td>{imagen}</td>
+            <td>{categoria}</td>
             <td>
                 <Button variant='warning'>Editar</Button>
                 <Button variant='danger'>Borrar</Button>
