@@ -2,11 +2,12 @@ import React, {useState, useEffect} from "react";
 import { Button } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import ItemProducto from "./ItemProducto";
+import {Link} from 'react-router-dom';
 
 const AdministrarProducto = () => {
 
   const URL = process.env.REACT_APP_API_CAFETERIA;
-  console.log(URL);
+  // console.log(URL);
   const[productos, setProductos] = useState([]);
 
   useEffect(()=>{
@@ -30,7 +31,7 @@ const AdministrarProducto = () => {
     <section className="container">
       <div className='d-flex justify-content-between align-items-center'>
         <h1 className="display-4 mt-5">Productos disponibles</h1>
-        <Button variant="primary" className='mt-5'>Agregar</Button>
+        <Link to='/administrar/producto/crear' className="mt-5 btn btn-primary">Agregar</Link>
       </div>
       <hr />
       <Table striped bordered hover responsive>
