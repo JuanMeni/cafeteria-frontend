@@ -15,16 +15,16 @@
       "id": 2
     },
     {
-      "nombreProducto": "Te verde",
-      "precio": "250",
+      "nombreProducto": "Te negro",
+      "precio": "200",
       "imagen": "jfdlsfdsfds",
       "categoria": "bebida-caliente",
       "id": 3
     },
     {
-      "nombreProducto": "facturas",
-      "precio": "50",
-      "imagen": "djoehgioqdw",
+      "nombreProducto": "facturas con dulce",
+      "precio": "55",
+      "imagen": "djoehgi",
       "categoria": "dulce",
       "id": 4
     }
