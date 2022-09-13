@@ -1,22 +1,62 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import React from "react";
+import { Button } from "react-bootstrap";
+import Swal from "sweetalert2";
 
-const ItemProducto = ({producto}) => {
-    const{nombreProducto, id, categoria, imagen, precio} = {...producto}
-    return (
-        <tr>
-            <td>{id}</td>
-            {/* <td>{props.producto.nombreProducto}</td> */}
-            <td>{nombreProducto}</td>
-            <td>${precio}</td>
-            <td>{imagen}</td>
-            <td>{categoria}</td>
-            <td>
-                <Button variant='warning'>Editar</Button>
-                <Button variant='danger'>Borrar</Button>
-            </td>
-          </tr>
-    );
+const ItemProducto = ({ producto, consultarAPI }) => {
+  const { nombreProducto, id, categoria, imagen, precio } = { ...producto };
+  const URL = process.env.REACT_APP_API_CAFETERIA;
+  const handleDelete = () => {
+    Swal.fire({
+      title: "¿Esta seguro de borrar este producto?",
+      text: "No puede volver este paso atras.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, borrar!",
+      cancelButtonText: "Cancelar",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        // realizar la peticion para eliminar un producto DELETE
+        try {
+          const parametros = {
+            method: "DELETE",
+          };
+          const repuesta = await fetch(URL + "/" + id, parametros);
+
+          if (repuesta.status === 200) {
+            Swal.fire(
+              "Producto eliminado!",
+              "Su producto fue borrado.",
+              "success"
+            );
+            // recargar la tabla de productos
+            consultarAPI();
+          }
+        } catch (error) {
+          console.log(error);
+          // mostrar un msj de error al usuario
+        }
+      }
+    });
+  };
+
+  return (
+    <tr>
+      <td>{id}</td>
+      {/* <td>{props.producto.nombreProducto}</td> */}
+      <td>{nombreProducto}</td>
+      <td>${precio}</td>
+      <td>{imagen}</td>
+      <td>{categoria}</td>
+      <td>
+        <Button variant="warning">Editar</Button>
+        <Button variant="danger" className="mx-1" onClick={handleDelete}>
+          Borrar
+        </Button>
+      </td>
+    </tr>
+  );
 };
 
 export default ItemProducto;

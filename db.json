@@ -15,39 +15,18 @@
       "id": 2
     },
     {
-      "nombreProducto": "medialuna",
-      "precio": "100",
-      "imagen": "https://...",
-      "categoria": "dulce",
+      "nombreProducto": "Te verde",
+      "precio": "250",
+      "imagen": "jfdlsfdsfds",
+      "categoria": "bebida-caliente",
       "id": 3
     },
     {
-      "nombreProducto": "te matcha",
-      "precio": "400",
-      "imagen": "https://...",
-      "categoria": "bebida-caliente",
-      "id": 4
-    },
-    {
-      "nombreProducto": "licuado de banana",
-      "precio": "500",
-      "imagen": "dsnakdlasdnsak",
-      "categoria": "bebida-fria",
-      "id": 5
-    },
-    {
-      "nombreProducto": "Te de limon",
-      "precio": "300",
-      "imagen": "djskadlsa",
-      "categoria": "bebida-caliente",
-      "id": 6
-    },
-    {
-      "nombreProducto": "factura",
-      "precio": "40",
-      "imagen": "dsaafjsafhaj",
+      "nombreProducto": "facturas",
+      "precio": "50",
+      "imagen": "djoehgioqdw",
       "categoria": "dulce",
-      "id": 7
+      "id": 4
     }
   ]
 }
