@@ -41,6 +41,13 @@
       "imagen": "djskadlsa",
       "categoria": "bebida-caliente",
       "id": 6
+    },
+    {
+      "nombreProducto": "factura",
+      "precio": "40",
+      "imagen": "dsaafjsafhaj",
+      "categoria": "dulce",
+      "id": 7
     }
   ]
 }
