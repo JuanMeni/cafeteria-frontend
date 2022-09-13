@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ItemProducto = ({ producto, consultarAPI }) => {
@@ -31,7 +32,7 @@ const ItemProducto = ({ producto, consultarAPI }) => {
               "success"
             );
             // recargar la tabla de productos
-            consultarAPI();
+            consultarAPI(); 
           }
         } catch (error) {
           console.log(error);
@@ -50,7 +51,7 @@ const ItemProducto = ({ producto, consultarAPI }) => {
       <td>{imagen}</td>
       <td>{categoria}</td>
       <td>
-        <Button variant="warning">Editar</Button>
+        <Link to={`/administrar/editar/${id}`} className='btn btn-warning'>Editar</Link>
         <Button variant="danger" className="mx-1" onClick={handleDelete}>
           Borrar
         </Button>
