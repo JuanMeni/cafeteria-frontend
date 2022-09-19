@@ -1,0 +1,32 @@
+{
+  "productos": [
+    {
+      "nombreProducto": "café",
+      "precio": "350",
+      "imagen": "https://...",
+      "categoria": "bebida-caliente",
+      "id": 1
+    },
+    {
+      "nombreProducto": "licuado",
+      "precio": "700",
+      "imagen": "https://...",
+      "categoria": "bebida-fria",
+      "id": 2
+    },
+    {
+      "nombreProducto": "Te negro",
+      "precio": "200",
+      "imagen": "jfdlsfdsfds",
+      "categoria": "bebida-caliente",
+      "id": 3
+    },
+    {
+      "nombreProducto": "brownies con almendras 2",
+      "precio": "100",
+      "imagen": "dnsajflankslafnakslf",
+      "categoria": "dulce",
+      "id": 5
+    }
+  ]
+}
