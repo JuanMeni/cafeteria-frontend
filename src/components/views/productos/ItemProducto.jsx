@@ -2,9 +2,10 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import './ItemProducto.css';
 
 const ItemProducto = ({ producto, consultarAPI }) => {
-  const { nombreProducto, id, categoria, imagen, precio } = { ...producto };
+  const { nombreProducto, _id, categoria, imagen, precio } = { ...producto };
   const URL = process.env.REACT_APP_API_CAFETERIA;
   const handleDelete = () => {
     Swal.fire({
@@ -23,7 +24,7 @@ const ItemProducto = ({ producto, consultarAPI }) => {
           const parametros = {
             method: "DELETE",
           };
-          const repuesta = await fetch(URL + "/" + id, parametros);
+          const repuesta = await fetch(URL + "/" + _id, parametros);
 
           if (repuesta.status === 200) {
             Swal.fire(
@@ -44,14 +45,14 @@ const ItemProducto = ({ producto, consultarAPI }) => {
 
   return (
     <tr>
-      <td>{id}</td>
+      <td>{_id}</td>
       {/* <td>{props.producto.nombreProducto}</td> */}
       <td>{nombreProducto}</td>
       <td>${precio}</td>
-      <td>{imagen}</td>
+      <td className="truncate">{imagen}</td>
       <td>{categoria}</td>
       <td>
-        <Link to={`/administrar/editar/${id}`} className='btn btn-warning'>Editar</Link>
+        <Link to={`/administrar/editar/${_id}`} className='btn btn-warning'>Editar</Link>
         <Button variant="danger" className="mx-1" onClick={handleDelete}>
           Borrar
         </Button>
